@@ -1,0 +1,19 @@
+# Environment and database credentials
+config/database.php
+.env
+*.env
+*.sqlite
+*.sqlite3
+*.db
+
+# Vercel and build artifacts
+.vercel
+*.log
+
+# Editor and OS files
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db

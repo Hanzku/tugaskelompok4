@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="240" height="160">
+  <defs>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EA580C"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+  </defs>
+  <!-- Base Ground -->
+  <rect x="10" y="145" width="220" height="6" rx="3" fill="#BFDBFE" opacity="0.6"/>
+  <!-- Trees -->
+  <circle cx="28" cy="120" r="14" fill="#6EE7B7" opacity="0.8"/>
+  <rect x="26" y="128" width="4" height="18" fill="#047857"/>
+  <circle cx="212" cy="120" r="14" fill="#6EE7B7" opacity="0.8"/>
+  <rect x="210" y="128" width="4" height="18" fill="#047857"/>
+  <!-- Main School Building -->
+  <rect x="45" y="70" width="150" height="75" rx="4" fill="#FFFFFF" opacity="0.95"/>
+  <!-- Roof -->
+  <polygon points="35,70 120,30 205,70" fill="url(#roofGrad)"/>
+  <!-- Flag Pole & Flag -->
+  <line x1="120" y1="30" x2="120" y2="10" stroke="#FFFFFF" stroke-width="2"/>
+  <polygon points="120,12 135,17 120,22" fill="#EF4444"/>
+  <!-- Clock Tower Center -->
+  <circle cx="120" cy="54" r="8" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
+  <line x1="120" y1="54" x2="120" y2="49" stroke="#78350F" stroke-width="1.2"/>
+  <line x1="120" y1="54" x2="124" y2="54" stroke="#78350F" stroke-width="1.2"/>
+  <!-- Main Entrance Door -->
+  <path d="M108 145 V125 C108 120 132 120 132 125 V145 Z" fill="#1E3A8A"/>
+  <!-- Windows Upper Floor -->
+  <rect x="58" y="85" width="16" height="18" rx="2" fill="#93C5FD"/>
+  <rect x="84" y="85" width="16" height="18" rx="2" fill="#93C5FD"/>
+  <rect x="140" y="85" width="16" height="18" rx="2" fill="#93C5FD"/>
+  <rect x="166" y="85" width="16" height="18" rx="2" fill="#93C5FD"/>
+  <!-- Windows Ground Floor -->
+  <rect x="58" y="115" width="16" height="18" rx="2" fill="#93C5FD"/>
+  <rect x="84" y="115" width="16" height="18" rx="2" fill="#93C5FD"/>
+  <rect x="140" y="115" width="16" height="18" rx="2" fill="#93C5FD"/>
+  <rect x="166" y="115" width="16" height="18" rx="2" fill="#93C5FD"/>
+</svg>
