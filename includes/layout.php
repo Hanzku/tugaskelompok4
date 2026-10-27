@@ -28,17 +28,15 @@ function render_header(string $title, string $activePage = 'guru', array $breadc
   <!-- Sidebar -->
   <aside class="sidebar" id="appSidebar" aria-label="Navigasi Utama">
     <div class="sidebar-header">
-      <div class="brand-icon-wrap" aria-hidden="true">
-        <!-- Graduation Cap SVG Icon -->
-        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-        </svg>
-      </div>
-      <div class="brand-info">
-        <h1>SMK MALAKA</h1>
-        <p>Sistem Informasi Sederhana</p>
-      </div>
+      <a href="index.php?page=dashboard" class="brand-link" title="Kembali ke Dashboard">
+        <div class="brand-icon-wrap">
+          <img src="assets/img/logo.svg" alt="Logo SMK Malaka" class="brand-logo-img">
+        </div>
+        <div class="brand-info">
+          <h1>SMK MALAKA</h1>
+          <p>Sistem Informasi Sederhana</p>
+        </div>
+      </a>
     </div>
 
     <nav class="sidebar-nav">

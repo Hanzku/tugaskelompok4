@@ -10,7 +10,7 @@ require_once __DIR__ . '/layout.php';
 
 function handle_request(): void
 {
-    $page = $_GET['page'] ?? 'guru';
+    $page = $_GET['page'] ?? 'dashboard';
     $action = $_GET['action'] ?? '';
 
     // ==========================================

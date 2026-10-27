@@ -1,27 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="siaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#149FA1"/>
-      <stop offset="100%" stop-color="#0B6F71"/>
+    <!-- Background Gradient: Academic Blue -->
+    <linearGradient id="smkBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="55%" stop-color="#2563EB"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
     </linearGradient>
+
+    <!-- Golden Accent Gradient -->
+    <linearGradient id="smkGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+
+    <!-- Book Page Gradient -->
+    <linearGradient id="smkPageGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+
+    <!-- Drop Shadow for Dimensionality -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="#0F172A" flood-opacity="0.25"/>
+    </filter>
   </defs>
-  <!-- Background Tile -->
-  <rect width="64" height="64" rx="16" fill="url(#siaGrad)"/>
-  <rect x="2" y="2" width="60" height="60" rx="14" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.5" fill="none"/>
 
-  <!-- Academic Mortarboard Cap -->
-  <path d="M32 10.5L50 18L32 25.5L14 18Z" fill="#ffffff"/>
-  <!-- Cap Tassel -->
-  <path d="M50 18V26.5" stroke="#5EE8EB" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-  <circle cx="50" cy="27.5" r="1.5" fill="#5EE8EB"/>
+  <!-- 1. Background Shield / Squircle Tile -->
+  <rect width="64" height="64" rx="16" fill="url(#smkBlueGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5" fill="none"/>
 
-  <!-- Stylized Monogram M & Academic Columns -->
-  <!-- Left Pillar -->
-  <path d="M17 27V49.5" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-  <!-- Right Pillar -->
-  <path d="M47 27V49.5" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" fill="none"/>
-  <!-- Center Diagonal Fold -->
-  <path d="M17 29L32 41.5L47 29" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <!-- Center Ribbon Accent -->
-  <path d="M32 41.5V49.5" stroke="#5EE8EB" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <!-- 2. Academic Mortarboard Cap (Top) -->
+  <g filter="url(#badgeShadow)">
+    <!-- Mortarboard Diamond Flat Top -->
+    <path d="M32 9.5L52 18.5L32 27.5L12 18.5Z" fill="#FFFFFF"/>
+    <!-- Cap Skullcap -->
+    <path d="M22 23.5V28C22 31.5 26.5 33.5 32 33.5C37.5 33.5 42 31.5 42 28V23.5" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Golden Tassel Ribbon -->
+    <path d="M49 19V27.5" stroke="url(#smkGoldGrad)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="49" cy="28.5" r="1.6" fill="#F59E0B"/>
+  </g>
+
+  <!-- 3. Open Book & Stylized 'M' for SMK Malaka (Bottom) -->
+  <g filter="url(#badgeShadow)">
+    <!-- Left Open Page -->
+    <path d="M32 36.5C26 33.5 19 34.5 14 36V49C19 47.5 26 46.5 32 49.5Z" fill="url(#smkPageGrad)"/>
+    <!-- Right Open Page -->
+    <path d="M32 36.5C38 33.5 45 34.5 50 36V49C45 47.5 38 46.5 32 49.5Z" fill="url(#smkPageGrad)"/>
+    <!-- Book Center Spine (Blue Notch) -->
+    <line x1="32" y1="36" x2="32" y2="50" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- 4. Center Gold Star / Spark of Excellence -->
+  <circle cx="32" cy="42.5" r="2" fill="url(#smkGoldGrad)"/>
 </svg>
