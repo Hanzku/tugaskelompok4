@@ -17,3 +17,5 @@ config/database.php
 *~
 .DS_Store
 Thumbs.db
+
+.vercel
