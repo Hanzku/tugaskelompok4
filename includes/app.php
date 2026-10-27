@@ -6,6 +6,8 @@ declare(strict_types=1);
  * Kelompok 4: Modul Guru
  */
 
+ini_set('display_errors', '0');
+
 if (session_status() === PHP_SESSION_NONE) {
     ini_set('session.use_strict_mode', '1');
     ini_set('session.cookie_httponly', '1');

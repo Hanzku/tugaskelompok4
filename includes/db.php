@@ -59,7 +59,7 @@ function db(): PDO
 
     if ($driver === 'sqlite') {
         $sqlitePath = env_val('DB_DATABASE', (string) ($cfg['name'] ?? ''));
-        if ($sqlitePath === '' || $sqlitePath === 'sia_malaka_kelompok4') {
+        if ($sqlitePath === '' || $sqlitePath === 'sia_malaka_kelompok4' || $sqlitePath === 'defaultdb') {
             $sqlitePath = __DIR__ . '/../database/database.sqlite';
         } else {
             $sqlitePath = resolve_file_path($sqlitePath);
@@ -74,20 +74,24 @@ function db(): PDO
     // Default: MySQL / MariaDB
     $host = env_val('DB_HOST', (string) ($cfg['host'] ?? '127.0.0.1'));
     $port = env_val('DB_PORT', (string) ($cfg['port'] ?? '3306'));
-    $name = env_val('DB_NAME', env_val('DB_DATABASE', (string) ($cfg['name'] ?? 'sia_malaka_kelompok4')));
-    $user = env_val('DB_USER', env_val('DB_USERNAME', (string) ($cfg['user'] ?? 'root')));
+    $name = env_val('DB_NAME', env_val('DB_DATABASE', (string) ($cfg['name'] ?? 'defaultdb')));
+    $user = env_val('DB_USER', env_val('DB_USERNAME', (string) ($cfg['user'] ?? 'avnadmin')));
     $pass = env_val('DB_PASSWORD', (string) ($cfg['password'] ?? ''));
 
     $sslSetting = env_val('DB_SSL');
     $ssl = $sslSetting !== null ? in_array($sslSetting, ['1', 'true', 'on', 'yes'], true) : !empty($cfg['ssl']);
 
-    if ($ssl && defined('PDO::MYSQL_ATTR_SSL_CA')) {
+    if ($ssl) {
         $caConfig = env_val('DB_SSL_CA', (string) ($cfg['ssl_ca'] ?? ''));
         $caResolved = resolve_file_path($caConfig);
         if ($caResolved !== '' && is_file($caResolved) && is_readable($caResolved)) {
-            $options[constant('PDO::MYSQL_ATTR_SSL_CA')] = $caResolved;
-            if (defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')) {
-                $options[constant('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT')] = true;
+            $sslCaKey = defined('Pdo\\Mysql::ATTR_SSL_CA') ? constant('Pdo\\Mysql::ATTR_SSL_CA') : (defined('PDO::MYSQL_ATTR_SSL_CA') ? constant('PDO::MYSQL_ATTR_SSL_CA') : null);
+            if ($sslCaKey !== null) {
+                $options[$sslCaKey] = $caResolved;
+            }
+            $sslVerifyKey = defined('Pdo\\Mysql::ATTR_SSL_VERIFY_SERVER_CERT') ? constant('Pdo\\Mysql::ATTR_SSL_VERIFY_SERVER_CERT') : (defined('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT') ? constant('PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT') : null);
+            if ($sslVerifyKey !== null) {
+                $options[$sslVerifyKey] = true;
             }
         }
     }
